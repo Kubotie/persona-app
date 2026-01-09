@@ -551,30 +551,6 @@ export const usePersonaStore = create<PersonaStore>((set, get) => ({
     }
   },
   
-  // AIでペルソナ軸を自動生成
-  generatePersonaAxesWithAI: async () => {
-    const { aggregation } = get();
-    
-    if (!aggregation || !aggregation.clusters || aggregation.clusters.length === 0) {
-      throw new Error('Aggregation結果が必要です。先にAggregationを生成してください。');
-    }
-    
-    try {
-      const axes = await generatePersonaAxesWithAI(aggregation);
-      
-      // orderを設定
-      const axesWithOrder = axes.map((axis, idx) => ({
-        ...axis,
-        order: idx,
-      }));
-      
-      set({ personaAxes: axesWithOrder });
-    } catch (error) {
-      console.error('ペルソナ軸生成エラー:', error);
-      throw error;
-    }
-  },
-  
   // 比較データ
   setComparison: (comparison) => {
     set({ comparison });
