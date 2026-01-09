@@ -12,7 +12,6 @@ import ExtractionReviewScreen from '@/components/screens/ExtractionReviewScreen'
 import AggregationScreen from '@/components/screens/AggregationScreen';
 import PersonaAxisScreen from '@/components/screens/PersonaAxisScreen';
 import PersonaScreen from '@/components/screens/PersonaScreen';
-import OrganizeScreen from '@/components/screens/OrganizeScreen';
 import SummaryScreen from '@/components/screens/SummaryScreen';
 import ComparisonScreen from '@/components/screens/ComparisonScreen';
 import KnowledgeBaseScreen from '@/components/screens/KnowledgeBaseScreen';
@@ -38,7 +37,6 @@ export default function Home() {
           {currentStep === 'aggregation' && <AggregationScreen />}
           {currentStep === 'persona-axis' && <PersonaAxisScreen />}
           {currentStep === 'summary' && <PersonaScreen />}
-          {currentStep === 'organize' && <OrganizeScreen />}
           {currentStep === 'comparison' && <ComparisonScreen />}
           {currentStep === 'knowledge-base' && <KnowledgeBaseScreen />}
           {!currentStep && <InputScreen />}
