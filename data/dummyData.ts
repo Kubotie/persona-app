@@ -336,29 +336,118 @@ export const dummyPersonaSummaries: PersonaSummary[] = [
   },
 ];
 
-// ダミー比較データ
+// ダミー比較データ（新しいPersonaComparison型に対応）
 export const dummyComparison: PersonaComparison = {
   personas: ['A', 'B', 'C'],
   comparison: {
-    challenges: {
-      A: dummyPersonaSummaries[0].summary.challenges,
-      B: dummyPersonaSummaries[1].summary.challenges,
-      C: dummyPersonaSummaries[2].summary.challenges,
+    one_line_summary: {
+      A: '価格を重視し、無料トライアルがあれば試したいと考えるユーザー',
+      B: '機能性とカスタマイズ性を重視し、デモ動画を求めているユーザー',
+      C: 'サポート体制を重視し、実績紹介を信頼の基準とするユーザー',
     },
-    emotions: {
-      A: dummyPersonaSummaries[0].summary.emotions,
-      B: dummyPersonaSummaries[1].summary.emotions,
-      C: dummyPersonaSummaries[2].summary.emotions,
+    background_story: {
+      A: '価格が高すぎることを懸念しているが、無料トライアルがあれば試してみたいと考えている',
+      B: '機能が不足していることやカスタマイズできないことに不満を持っており、デモ動画を見て判断したい',
+      C: 'サポート体制を重視しており、実績紹介があれば信頼できると考える',
     },
-    decisionTriggers: {
-      A: dummyPersonaSummaries[0].summary.decisionTriggers,
-      B: dummyPersonaSummaries[1].summary.decisionTriggers,
-      C: dummyPersonaSummaries[2].summary.decisionTriggers,
+    proxy_purchase_structure: {
+      A: {
+        whose_problem: '価格が高すぎる問題',
+        who_solves: '無料トライアルを提供する企業',
+        how: '無料トライアルを提供して試してもらう',
+      },
+      B: {
+        whose_problem: '機能不足とカスタマイズ不可の問題',
+        who_solves: '機能を拡充しカスタマイズ性を提供する企業',
+        how: 'デモ動画で機能性を証明し、カスタマイズ性を示す',
+      },
+      C: {
+        whose_problem: 'サポート不足の問題',
+        who_solves: '充実したサポート体制を提供する企業',
+        how: '実績紹介を通じて信頼性を示し、サポート体制をアピールする',
+      },
     },
-    ngExpressions: {
-      A: dummyPersonaSummaries[0].summary.ngExpressions,
-      B: dummyPersonaSummaries[1].summary.ngExpressions,
-      C: dummyPersonaSummaries[2].summary.ngExpressions,
+    job_to_be_done: {
+      A: {
+        functional: ['無料で試す', '価格を確認する'],
+        emotional: ['不安を解消する', '期待を満たす'],
+        social: [],
+      },
+      B: {
+        functional: ['機能を確認する', 'カスタマイズ性を確認する'],
+        emotional: ['不満を解消する'],
+        social: [],
+      },
+      C: {
+        functional: ['サポート体制を確認する'],
+        emotional: ['信頼を得る'],
+        social: ['実績を確認する'],
+      },
+    },
+    decision_criteria_top5: {
+      A: [
+        { criterion: '価格', weight: 0.4 },
+        { criterion: '無料トライアル', weight: 0.3 },
+        { criterion: '使いやすさ', weight: 0.2 },
+        { criterion: '期待値', weight: 0.05 },
+        { criterion: '不安解消', weight: 0.05 },
+      ],
+      B: [
+        { criterion: '機能性', weight: 0.35 },
+        { criterion: 'カスタマイズ性', weight: 0.3 },
+        { criterion: 'デモ動画', weight: 0.2 },
+        { criterion: '使いやすさ', weight: 0.1 },
+        { criterion: '品質', weight: 0.05 },
+      ],
+      C: [
+        { criterion: 'サポート体制', weight: 0.5 },
+        { criterion: '実績', weight: 0.3 },
+        { criterion: '信頼性', weight: 0.15 },
+        { criterion: '継続性', weight: 0.03 },
+        { criterion: '安心感', weight: 0.02 },
+      ],
+    },
+    typical_journey: {
+      A: {
+        trigger: '価格が高すぎるという課題認識',
+        consideration: '無料トライアルがあれば試したい',
+        purchase: 'トライアルで期待値が満たされた場合',
+        retention: '使いやすさと期待値の継続',
+      },
+      B: {
+        trigger: '機能不足とカスタマイズ不可への不満',
+        consideration: 'デモ動画で機能性とカスタマイズ性を確認',
+        purchase: '機能性とカスタマイズ性が確認できた場合',
+        retention: '継続的な機能拡充とカスタマイズ性',
+      },
+      C: {
+        trigger: 'サポート不足への懸念',
+        consideration: '実績紹介で信頼性を確認',
+        purchase: 'サポート体制と実績が信頼できると判断した場合',
+        retention: '継続的なサポート体制の提供',
+      },
+    },
+    common_misconceptions: {
+      A: ['「簡単」という言葉は信用できない'],
+      B: ['「高機能」という表現は逆効果'],
+      C: [],
+    },
+    effective_strategies: {
+      A: {
+        messages: ['無料トライアルを提供', '価格の妥当性を説明'],
+        touchpoints: ['トライアル登録ページ', '価格説明ページ'],
+        offers: ['無料トライアル', '価格見積もり'],
+      },
+      B: {
+        messages: ['機能性の詳細説明', 'カスタマイズ性のアピール'],
+        touchpoints: ['デモ動画ページ', '機能説明ページ'],
+        offers: ['デモ動画視聴', '機能デモ'],
+      },
+      C: {
+        messages: ['実績紹介', 'サポート体制の説明'],
+        touchpoints: ['実績紹介ページ', 'サポート紹介ページ'],
+        offers: ['実績紹介資料', 'サポート相談'],
+      },
     },
   },
   commonPoints: ['課題に関する発言が多い（A, B, C）'],
