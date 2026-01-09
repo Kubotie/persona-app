@@ -43,7 +43,6 @@ persona-app/
 │   ├── Header.tsx         # ヘッダー（ナビゲーション）
 │   └── screens/           # 画面コンポーネント
 │       ├── InputScreen.tsx      # データ入力画面
-│       ├── OrganizeScreen.tsx   # 発言整理画面
 │       ├── SummaryScreen.tsx    # 要約画面
 │       └── ComparisonScreen.tsx # 比較画面
 ├── store/                 # Zustand状態管理
