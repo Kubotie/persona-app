@@ -82,7 +82,7 @@ NEXT_PUBLIC_OPENROUTER_API_KEY=your-openrouter-api-key-here
 
 ```
 NEXT_PUBLIC_AI_API_BASE_URL=https://openrouter.ai/api/v1
-NEXT_PUBLIC_AI_MODEL=openai/gpt-4o-mini
+NEXT_PUBLIC_AI_MODEL=anthropic/claude-sonnet-4.5
 NEXT_PUBLIC_SITE_URL=https://your-app-name.vercel.app
 ```
 

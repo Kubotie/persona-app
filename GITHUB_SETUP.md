@@ -105,7 +105,7 @@ GitHubにプッシュが完了したら：
 2. 以下を追加：
    - `NEXT_PUBLIC_OPENROUTER_API_KEY` = あなたのOpenRouter.ai APIキー
    - `NEXT_PUBLIC_AI_API_BASE_URL` = `https://openrouter.ai/api/v1`（オプション）
-   - `NEXT_PUBLIC_AI_MODEL` = `openai/gpt-4o-mini`（オプション）
+   - `NEXT_PUBLIC_AI_MODEL` = `anthropic/claude-sonnet-4.5`（オプション、デフォルトはClaude Sonnet 4.5）
    - `NEXT_PUBLIC_SITE_URL` = デプロイ後のURL（例: `https://your-app.vercel.app`）
 3. すべての環境（Production, Preview, Development）にチェック
 4. 「Redeploy」をクリック

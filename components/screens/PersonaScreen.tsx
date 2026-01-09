@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { usePersonaStore } from '@/store/usePersonaStore';
 import { downloadJson } from '@/utils/exportJson';
 import { Save } from 'lucide-react';
+import { savePersona } from '@/lib/kb-client';
 
 export default function PersonaScreen() {
   const { 
@@ -12,7 +13,7 @@ export default function PersonaScreen() {
     personaAxes,
     setCurrentStep,
     generatePersonas,
-    savePersonaToKnowledgeBase,
+    project,
   } = usePersonaStore();
   
   const [selectedPersonaId, setSelectedPersonaId] = useState<string | null>(null);
@@ -53,7 +54,13 @@ export default function PersonaScreen() {
     
     setIsSaving(true);
     try {
-      const personaId = await savePersonaToKnowledgeBase(selectedPersona);
+      // 統合KBシステムのAPIを使用して保存
+      await savePersona(selectedPersona, {
+        title: `KB-Persona_${selectedPersona.one_line_summary.substring(0, 20)}`,
+        folder_path: 'My Files/Personas',
+        source_app: 'persona-app',
+        source_project_id: project?.id,
+      });
       alert('ナレッジベースに保存しました。');
       // ナレッジベース画面に遷移
       setCurrentStep('knowledge-base');

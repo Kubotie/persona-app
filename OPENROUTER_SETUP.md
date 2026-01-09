@@ -17,8 +17,8 @@ NEXT_PUBLIC_OPENROUTER_API_KEY=your-openrouter-api-key-here
 # OpenRouter.aiのAPIベースURL（自動設定されますが、明示的に指定することも可能）
 NEXT_PUBLIC_AI_API_BASE_URL=https://openrouter.ai/api/v1
 
-# 使用するモデル（オプション、デフォルト: openai/gpt-4o-mini）
-NEXT_PUBLIC_AI_MODEL=openai/gpt-4o-mini
+# 使用するモデル（オプション、デフォルト: anthropic/claude-sonnet-4.5）
+NEXT_PUBLIC_AI_MODEL=anthropic/claude-sonnet-4.5
 
 # サイトURL（オプション、OpenRouter.aiの推奨ヘッダー用）
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
@@ -28,10 +28,11 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
 OpenRouter.aiでは複数のモデルを選択できます。以下は例です：
 
-- `openai/gpt-4o-mini` - デフォルト（コスト効率が良い）
+- `anthropic/claude-sonnet-4.5` - デフォルト（最新のClaude Sonnet 4.5、推論能力が高い）
+- `anthropic/claude-3.5-sonnet` - Claude 3.5 Sonnet（以前のバージョン）
+- `openai/gpt-4o-mini` - コスト効率が良い
 - `openai/gpt-4o` - より高性能
 - `openai/gpt-4-turbo` - 高精度
-- `anthropic/claude-3.5-sonnet` - Claude 3.5 Sonnet
 - `google/gemini-pro-1.5` - Google Gemini Pro
 
 モデルを変更する場合は、`.env.local`の`NEXT_PUBLIC_AI_MODEL`を変更してください。

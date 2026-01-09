@@ -10,9 +10,9 @@ const API_KEY = process.env.NEXT_PUBLIC_OPENROUTER_API_KEY || process.env.NEXT_P
 const API_BASE_URL = process.env.NEXT_PUBLIC_AI_API_BASE_URL || 
   (process.env.NEXT_PUBLIC_OPENROUTER_API_KEY ? 'https://openrouter.ai/api/v1' : 'https://api.openai.com/v1');
 
-// 使用するモデル（環境変数で指定可能、デフォルトはOpenRouter.ai形式）
+// 使用するモデル（環境変数で指定可能、デフォルトはClaude Sonnet 4.5）
 const DEFAULT_MODEL = process.env.NEXT_PUBLIC_AI_MODEL || 
-  (process.env.NEXT_PUBLIC_OPENROUTER_API_KEY ? 'openai/gpt-4o-mini' : 'gpt-4o-mini');
+  (process.env.NEXT_PUBLIC_OPENROUTER_API_KEY ? 'anthropic/claude-sonnet-4.5' : 'gpt-4o-mini');
 
 /**
  * LLM APIを呼び出す汎用関数
