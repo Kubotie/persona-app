@@ -12,31 +12,42 @@
 
 まず、プロジェクトをGitHubリポジトリにプッシュします：
 
+### ステップ1: 既存のリモートを削除（存在する場合）
+
 ```bash
-# プロジェクトディレクトリに移動
 cd "/Users/kubotie/Downloads/AIテキスト/persona-app"
+git remote remove origin
+```
 
-# Gitリポジトリを初期化（まだの場合）
-git init
+### ステップ2: GitHubでリポジトリを作成
 
-# ファイルをステージング
+1. ブラウザで https://github.com/new を開く
+2. **Repository name**: `persona-summary-app`（任意の名前）
+3. 「Create repository」をクリック
+4. 作成されたリポジトリのURLをコピー（例: `https://github.com/あなたのユーザー名/persona-summary-app.git`）
+
+### ステップ3: 正しいリモートURLで設定
+
+```bash
+# ステップ2でコピーしたURLを使用（YOUR-USERNAMEを実際のGitHubユーザー名に置き換える）
+git remote add origin https://github.com/YOUR-USERNAME/persona-summary-app.git
+
+# 変更をコミット（未コミットの変更がある場合）
 git add .
-
-# コミット
 git commit -m "Initial commit: Persona Summary App"
 
-# GitHubでリポジトリを作成（https://github.com/new）
-# リポジトリ名: persona-summary-app（任意）
-
-# リモートを追加してプッシュ
-git remote add origin https://github.com/your-username/persona-summary-app.git
+# ブランチ名をmainに設定
 git branch -M main
+
+# GitHubにプッシュ
 git push -u origin main
 ```
 
-**注意**: 
+**⚠️ 重要**: 
+- `YOUR-USERNAME`の部分を**実際のGitHubユーザー名**に置き換えてください
 - `.env.local`ファイルは`.gitignore`に含まれているため、コミットされません
 - 環境変数はVercelダッシュボードで設定してください
+- プッシュ時に認証を求められたら、Personal Access Tokenを使用してください（GITHUB_SETUP.md参照）
 
 ## 3. Vercelにプロジェクトをインポート
 
