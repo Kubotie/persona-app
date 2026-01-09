@@ -748,7 +748,11 @@ export const usePersonaStore = create<PersonaStore>((set, get) => ({
                     } else if (field === 'barriers' && fieldQuotes.barriers) {
                       fieldQuotes.barriers.push(quote);
                     } else if (field === 'job_to_be_done' || field.startsWith('job_to_be_done.')) {
-                      const subField = field.split('.')[1] || 'functional';
+                      const subFieldRaw = field.split('.')[1] || 'functional';
+                      const subField: 'functional' | 'emotional' | 'social' = 
+                        (subFieldRaw === 'functional' || subFieldRaw === 'emotional' || subFieldRaw === 'social')
+                          ? subFieldRaw
+                          : 'functional';
                       if (!fieldQuotes.job_to_be_done) {
                         fieldQuotes.job_to_be_done = {};
                       }
@@ -757,7 +761,11 @@ export const usePersonaStore = create<PersonaStore>((set, get) => ({
                       }
                       fieldQuotes.job_to_be_done[subField]!.push(quote);
                     } else if (field === 'decision_criteria' || field.startsWith('decision_criteria.')) {
-                      const subField = field.split('.')[1] || 'price';
+                      const subFieldRaw = field.split('.')[1] || 'price';
+                      const subField: 'price' | 'trust' | 'effort' | 'effectiveness' = 
+                        (subFieldRaw === 'price' || subFieldRaw === 'trust' || subFieldRaw === 'effort' || subFieldRaw === 'effectiveness')
+                          ? subFieldRaw
+                          : 'price';
                       if (!fieldQuotes.decision_criteria) {
                         fieldQuotes.decision_criteria = {};
                       }
